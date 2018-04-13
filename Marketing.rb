@@ -1,6 +1,6 @@
 require 'date'
 class Buyer
-  def user_data(list)
+  def user_data(list)          #functionalty for Task:1
     user_objects  = Array.new(list.length)
     for index_no in (0...list.length)
       user_objects[index_no] = "#{list[index_no][:first_name]} #{list[index_no][:last_name]}"
@@ -8,7 +8,7 @@ class Buyer
     return user_objects
   end
 
-  def get_buyer_fullname(list)
+  def get_buyer_fullname(list)  #functionalty for Task:3
     if list[:role] == 'buyer'
       return "'#{list[:first_name]} #{list[:last_name]}'"
     else
@@ -16,15 +16,15 @@ class Buyer
     end
   end
 
-  def get_age(list)
+  def get_age(list)             #functionalty for Task:5
     return Date.today.year - (Date.parse list[:date_of_birth]).year
   end
 
-  def get_buyer_seller_fullname(list)
+  def get_buyer_seller_fullname(list)  #functionalty for Task:4
     return "'#{list[:first_name]} #{list[:last_name]}'"
   end
 
-  def get_allbuyer_detail(list)
+  def get_allbuyer_detail(list)     #functionalty for Task:6
     userno = 0
      buyer_detail = Array.new()
     for index_no in (0...list.length)
@@ -36,7 +36,7 @@ class Buyer
     return buyer_detail
   end
 
-  def get_user_detail_startwithAlex(list)
+  def get_user_detail_startwithAlex(list)  #functionalty for Task:8
     user_detail = Array.new()
     userno = 0
     for index_no in (0...list.length)
@@ -50,7 +50,7 @@ class Buyer
 end  
 
 class Seller
-  def get_allseller_detail(list)
+  def get_allseller_detail(list)      #functionalty for Task:7
     userno = 0
     seller_detail = Array.new()
     for index_no in (0...list.length)
@@ -64,7 +64,7 @@ class Seller
 end
 
 class Product
-  def product_data(list)
+  def product_data(list)          #functionalty for Task:2
     product_objects = Array.new(list.length)
     for index_no in (0...list.length)
       product_objects[index_no] = "#{list[index_no][:name]} #{list[index_no][:seller]}"
